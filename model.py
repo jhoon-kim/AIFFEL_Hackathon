@@ -3,9 +3,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import torchvision.models as models
-
-import utils
-from augmentation import Augmentor
 from dataset import *
 
 synth_dataset = get_synth_dataset()
@@ -349,5 +346,3 @@ class AttentionCell(nn.Module):
         concat_context = torch.cat([context, char_onehots], 1)
         cur_hidden = self.rnn(concat_context, prev_hidden)
         return cur_hidden, alpha
-
-
