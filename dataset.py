@@ -283,7 +283,7 @@ class COCODataset(Dataset):
     """
 
     def __init__(self, img_dir, transform=None):
-        self.box_path_list = glob.glob(img_dir + f"/coco_*.jpg")[::3]
+        self.box_path_list = glob.glob(img_dir + "/coco_*.jpg")[::3]
         self.transform = transform
 
     def __len__(self):
